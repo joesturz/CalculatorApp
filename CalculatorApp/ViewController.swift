@@ -13,6 +13,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var display: UILabel!
   
   var userIsInTheMiddleOfTyping = false
+  var userEnteredDecimal = false
   
   @IBAction func touchDigit(_ sender: UIButton) {
     let digit = sender.currentTitle!
@@ -21,6 +22,20 @@ class ViewController: UIViewController {
       display.text = textCurrentlyInDisplay + digit
     } else {
       display.text = digit
+      userIsInTheMiddleOfTyping = true
+    }
+  }
+  @IBAction func touchDecimal(_ sender: UIButton) {
+    let decimal = sender.currentTitle!
+    if userIsInTheMiddleOfTyping && !userEnteredDecimal {
+      let textCurrentlyInDisplay = display.text!
+      display.text = textCurrentlyInDisplay + decimal
+      userEnteredDecimal = true
+    }
+    else {
+      if !userEnteredDecimal {
+        display.text = "0" + decimal
+      }
       userIsInTheMiddleOfTyping = true
     }
   }
@@ -41,6 +56,10 @@ class ViewController: UIViewController {
     if userIsInTheMiddleOfTyping {
       brain.setOperand(displayValue)
       userIsInTheMiddleOfTyping = false
+    }
+    
+    if userEnteredDecimal {
+      userEnteredDecimal = false
     }
     
     if let mathmaticalSymbol = sender.currentTitle {

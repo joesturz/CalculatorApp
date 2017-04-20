@@ -28,6 +28,7 @@ struct CalculatorBrain {
     "sin": Operation.unaryOperation(sin),
     "cos": Operation.unaryOperation(cos),
     "tan": Operation.unaryOperation(tan),
+    "x^2": Operation.unaryOperation({ $0 * $0 }),
     "±": Operation.unaryOperation({ -$0 }),
     "×": Operation.binaryOperation({ $0 * $1 }),
     "−": Operation.binaryOperation({ $0 - $1 }),
@@ -61,6 +62,15 @@ struct CalculatorBrain {
     if pendingBinaryOperation != nil && accumulator != nil {
       accumulator = pendingBinaryOperation!.perform(with: accumulator!)
       pendingBinaryOperation = nil
+    }
+    else {
+      accumulator = 0.0
+    }
+  }
+  
+  var resultIsPending: Bool {
+    get {
+      return pendingBinaryOperation != nil
     }
   }
   

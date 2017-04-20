@@ -235,7 +235,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <state key="normal" title="."/>
                                                         <connections>
-                                                            <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eyg-oF-7ld"/>
+                                                            <action selector="touchDecimal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r3F-si-FTn"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -274,7 +274,7 @@
                                                         <rect key="frame" x="265" y="0.0" width="78" height="89"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                        <state key="normal" title="√"/>
+                                                        <state key="normal" title="x^2"/>
                                                         <connections>
                                                             <action selector="preformOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QrC-9x-4TP"/>
                                                         </connections>
