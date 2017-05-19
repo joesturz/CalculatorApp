@@ -30,7 +30,7 @@ struct CalculatorBrain {
     "sin": Operation.unaryOperation(sin),
     "cos": Operation.unaryOperation(cos),
     "tan": Operation.unaryOperation(tan),
-    "%": Operation.unaryOperation({ $0 * 0.01}),
+    "%": Operation.unaryOperation({ $0 * 0.01 }),
     "x^2": Operation.unaryOperation({ $0 * $0 }),
     "±": Operation.unaryOperation({ -$0 }),
     "×": Operation.binaryOperation({ $0 * $1 }),
