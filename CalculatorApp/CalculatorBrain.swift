@@ -65,7 +65,6 @@ struct CalculatorBrain {
         }
       case .equals:
         print(opList!)
-        opList = nil
         performPendingBinaryOperation()
       case .clear:
         opList = nil
@@ -78,9 +77,6 @@ struct CalculatorBrain {
     if pendingBinaryOperation != nil && accumulator != nil {
       accumulator = pendingBinaryOperation!.perform(with: accumulator!)
       pendingBinaryOperation = nil
-    }
-    else {
-      accumulator = 0.0
     }
   }
   
